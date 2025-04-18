@@ -74,75 +74,6 @@ const TechnologiesPage = () => {
           image: "/placeholder.svg"
         }
       ]
-    },
-    {
-      id: "software",
-      name: "Программное обеспечение",
-      icon: Server,
-      description: "Движки, SDK и инструменты разработки для создания VR/AR контента.",
-      content: [
-        {
-          title: "Игровые движки для VR",
-          description: "Специализированные версии Unreal Engine и Unity обеспечивают высокореалистичную графику, физику и интерактивность, оптимизированные для VR-среды.",
-          image: "/placeholder.svg"
-        },
-        {
-          title: "SDK для разработчиков",
-          description: "Комплекты разработки программного обеспечения позволяют создавать приложения, полностью использующие возможности современных VR/AR устройств.",
-          image: "/placeholder.svg"
-        },
-        {
-          title: "Средства моделирования",
-          description: "Инструменты для создания трехмерных моделей, оптимизированных для использования в виртуальной и дополненной реальности с учетом их производительности.",
-          image: "/placeholder.svg"
-        }
-      ]
-    },
-    {
-      id: "mobile",
-      name: "Мобильные решения",
-      icon: Smartphone,
-      description: "VR/AR технологии для смартфонов и автономных устройств.",
-      content: [
-        {
-          title: "Мобильные VR шлемы",
-          description: "Автономные VR устройства со встроенными процессорами и аккумуляторами, не требующие подключения к компьютеру для работы.",
-          image: "/placeholder.svg"
-        },
-        {
-          title: "Смартфон-совместимые гарнитуры",
-          description: "Простые и доступные решения, позволяющие использовать смартфон в качестве дисплея для VR-контента.",
-          image: "/placeholder.svg"
-        },
-        {
-          title: "Облачный рендеринг",
-          description: "Технологии стриминга VR-контента с удаленных серверов на мобильные устройства, обеспечивающие высокое качество графики без необходимости в мощном локальном оборудовании.",
-          image: "/placeholder.svg"
-        }
-      ]
-    },
-    {
-      id: "future",
-      name: "Будущие технологии",
-      icon: Brain,
-      description: "Инновации и тренды, которые формируют будущее VR/AR индустрии.",
-      content: [
-        {
-          title: "Нейроинтерфейсы",
-          description: "Экспериментальные технологии прямого взаимодействия мозга с компьютером для управления виртуальной средой силой мысли без необходимости физических движений.",
-          image: "/placeholder.svg"
-        },
-        {
-          title: "Тактильные костюмы",
-          description: "Полноразмерная одежда с тысячами тактильных датчиков, передающих ощущение прикосновений, давления, температуры и даже воздушных потоков в виртуальном мире.",
-          image: "/placeholder.svg"
-        },
-        {
-          title: "Квантовые вычисления для VR",
-          description: "Применение квантовых компьютеров для создания беспрецедентно реалистичных виртуальных миров с физикой, неотличимой от реальности.",
-          image: "/placeholder.svg"
-        }
-      ]
     }
   ];
 
@@ -159,7 +90,7 @@ const TechnologiesPage = () => {
         </div>
 
         <Tabs defaultValue="vr" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8">
+          <TabsList className="grid grid-cols-1 md:grid-cols-3 mb-8">
             {technologies.map((tech) => (
               <TabsTrigger 
                 key={tech.id} 
@@ -238,40 +169,6 @@ const TechnologiesPage = () => {
             <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
               <h3 className="font-bold mb-2">Глобальный рост</h3>
               <p className="text-sm">К 2030 году ожидается, что рынок VR достигнет $150 млрд, с наибольшим ростом в Азиатско-Тихоокеанском регионе.</p>
-            </div>
-          </div>
-        </section>
-        
-        {/* CTA */}
-        <section className="mt-24 bg-muted/50 p-12 rounded-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Хотите быть в курсе новейших разработок в сфере VR?
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Подпишитесь на нашу рассылку, чтобы получать самые свежие новости и обзоры технологий виртуальной реальности.
-              </p>
-              <div className="flex gap-4">
-                <Button className="bg-gradient-to-r from-vr-primary to-vr-secondary hover:opacity-90 transition-opacity">
-                  Подписаться
-                </Button>
-                <Button variant="outline" className="border-vr-primary text-vr-primary hover:bg-vr-primary/10">
-                  Узнать больше
-                </Button>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="relative inline-block">
-                <div className="animate-float">
-                  <img 
-                    src="/placeholder.svg" 
-                    alt="VR Headset" 
-                    className="mx-auto w-64 h-64 object-contain"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-vr-primary/20 to-vr-accent/20 rounded-full blur-3xl -z-10"></div>
-              </div>
             </div>
           </div>
         </section>

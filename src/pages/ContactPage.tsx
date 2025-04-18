@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/ContactForm";
-import { Mail, Phone, MapPin, MessageSquare, Users, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, Users } from "lucide-react";
 
 const ContactPage = () => {
   const contactInfo = [
@@ -38,14 +38,6 @@ const ContactPage = () => {
     {
       question: "Можно ли протестировать ваши продукты перед покупкой?",
       answer: "Да, в нашем шоу-руме вы можете протестировать все представленные VR устройства. Предварительная запись на демонстрацию доступна через форму на сайте или по телефону."
-    },
-    {
-      question: "Какая гарантия предоставляется на продукцию?",
-      answer: "На все VR устройства мы предоставляем официальную гарантию производителя сроком от 12 до 24 месяцев, в зависимости от модели. Дополнительно можно приобрести расширенную гарантию до 3-х лет."
-    },
-    {
-      question: "Проводите ли вы обучение по работе с VR оборудованием?",
-      answer: "Да, мы предлагаем как бесплатные вводные консультации при покупке, так и расширенные курсы по использованию VR в различных сферах: образовании, дизайне, медицине и других. Подробная информация доступна в разделе 'Обучение'."
     }
   ];
 
@@ -61,7 +53,7 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {contactInfo.map((item, index) => (
             <Card key={index} className="border-border/50 hover:border-vr-primary/50 transition-colors vr-card-hover">
               <CardHeader className="flex flex-row items-start space-x-4 pb-2">
@@ -125,88 +117,30 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* Map and Visit Us */}
-        <div className="mb-24">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4 flex items-center justify-center">
-              <MapPin className="mr-2 h-6 w-6 text-vr-primary" />
-              Посетите наш шоу-рум
+        {/* Map */}
+        <div className="mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-3xl font-bold mb-4">
+              Наш <span className="vr-gradient-text">шоу-рум</span>
             </h2>
             <p className="text-muted-foreground">
               Приходите и испытайте новейшие технологии виртуальной реальности в нашем современном шоу-руме.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-            <div className="lg:col-span-3">
-              <div className="relative aspect-[16/9] bg-muted rounded-lg overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <MapPin className="w-16 h-16 text-vr-primary" />
-                </div>
-                <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
-                  <h3 className="font-bold mb-2">VR Мир Шоу-рум</h3>
-                  <p className="text-sm">Москва, ул. Виртуальная, 42</p>
-                </div>
-              </div>
+          <div className="relative aspect-[16/9] bg-muted rounded-lg overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <MapPin className="w-16 h-16 text-vr-primary" />
             </div>
-
-            <div className="lg:col-span-2">
-              <Card className="border-border/50 h-full">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Clock className="mr-2 h-5 w-5 text-vr-primary" />
-                    Часы работы
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="text-muted-foreground">Понедельник - Пятница</div>
-                    <div className="font-medium">10:00 - 20:00</div>
-                    
-                    <div className="text-muted-foreground">Суббота</div>
-                    <div className="font-medium">11:00 - 18:00</div>
-                    
-                    <div className="text-muted-foreground">Воскресенье</div>
-                    <div className="font-medium">12:00 - 17:00</div>
-                  </div>
-                  
-                  <div className="border-t border-border pt-4 mt-4">
-                    <h4 className="font-semibold mb-2">Как добраться</h4>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      Ближайшие станции метро: Виртуальная (выход 3), Цифровая (выход 1).
-                      От метро 5 минут пешком.
-                    </p>
-                    <Button className="bg-gradient-to-r from-vr-primary to-vr-secondary hover:opacity-90 transition-opacity w-full">
-                      Записаться на демонстрацию
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter */}
-        <section className="bg-muted/50 p-12 rounded-lg">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Оставайтесь на связи
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Подпишитесь на нашу рассылку, чтобы получать новости, советы и эксклюзивные предложения.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="your@email.com" 
-                className="border border-border rounded-md px-4 py-2 bg-background w-full"
-              />
-              <Button className="bg-gradient-to-r from-vr-primary to-vr-secondary hover:opacity-90 transition-opacity shrink-0">
-                Подписаться
+            <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
+              <h3 className="font-bold mb-2">VR Мир Шоу-рум</h3>
+              <p className="text-sm">Москва, ул. Виртуальная, 42</p>
+              <Button className="mt-4 w-full bg-gradient-to-r from-vr-primary to-vr-secondary hover:opacity-90 transition-opacity">
+                Проложить маршрут
               </Button>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );
